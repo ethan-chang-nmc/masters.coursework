@@ -22,7 +22,7 @@ battle <- function(attack_num_dice)
 
 # Function to sample battles to find probability of attacker wins
 win_prob <- sapply(1:3, function(k)
-{
+{ 
   mean(replicate(sim_num, battle(k)))
 })
 
