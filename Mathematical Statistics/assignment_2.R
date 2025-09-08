@@ -22,3 +22,11 @@ world_series <- function(A_prob)
         return(0)
     }
 }
+
+results <- replicate(sim_num, world_series(0.55))
+
+prob_A <- mean(results == 1)
+prob_B <- mean(results == 0)
+
+prob_A
+prob_B
