@@ -9,10 +9,9 @@
 # equivalent to winning at least 4 in 7 games.
 sim_num = 1000
 
-world_series <- function(A_prob)
+play <-function(A_prob)
 {
     sample_num = runif(1)
-
     if (sample_num < A_prob)
     {
         return(1)
@@ -23,10 +22,38 @@ world_series <- function(A_prob)
     }
 }
 
-results <- replicate(sim_num, world_series(0.55))
+world_series <- function()
+{
+    A_wins <- 0
+    B_wins <- 0
+    
+    while (A_wins < 4 && B_wins < 4) 
+    {
+        result <- play(0.55)
+        if (result == 1) 
+        {
+            A_wins <- A_wins + 1
+        } 
+        else 
+        {
+            B_wins <- B_wins + 1
+        }
+    }
+    
+    if (A_wins == 4) 
+    {
+        return(1)
+    }
+    else
+    {
+        return(0)
+    }
+}
 
-prob_A <- mean(results == 1)
-prob_B <- mean(results == 0)
+sim_results <- replicate(sim_num, world_series())
+
+prob_A <- mean(sim_results == 1)
+prob_B <- mean(sim_results == 0)
 
 prob_A
 prob_B
