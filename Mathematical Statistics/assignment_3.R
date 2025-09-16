@@ -8,13 +8,17 @@
 binomial_sample <- rbinom(1000, size = 20, prob = 0.4)
 bin_mean <- mean(binomial_sample)
 bin_theoretical <- 20 * 0.4
-cat("Sample mean =", bin_mean, "\n")
+cat("Sample mean, binomial =", bin_mean, "\n")
 cat("Theoretical expectation =", bin_theoretical, "\n\n")
 
 # 2. Using the function rhyper in R, generate 1000 random deviates from a hypergeometric distribution 
 # with 4 white balls, 8 black balls, and 3 balls drawn without replacement. Compute the sample mean 
 # and compare with the theoretical expectation.
-
+hg_sample <- rhyper(1000, m = 4, n = 8, k = 3)
+hg_mean <- mean(hg_sample)
+hg_theoretical <- 3 * 4 / (4 + 8)
+cat("Sample mean, hypergeometric =", hg_mean, "\n")
+cat("Theoretical expectation =", hg_theoretical, "\n\n")
 
 # 3. Using the function rexp in R, generate 1000 random deviates from an exponential with lambda=3. 
 # Compute the sample mean and compare with the theoretical expectation, which is 1/lambda.
