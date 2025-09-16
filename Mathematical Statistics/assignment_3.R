@@ -22,3 +22,8 @@ cat("Theoretical expectation =", hg_theoretical, "\n\n")
 
 # 3. Using the function rexp in R, generate 1000 random deviates from an exponential with lambda=3. 
 # Compute the sample mean and compare with the theoretical expectation, which is 1/lambda.
+exp_sample <- rexp(1000, rate = 3)
+exp_mean <- mean(exp_sample)
+exp_theoretical <- 1 / 3
+cat("Sample mean, exponential =", exp_mean, "\n")
+cat("Theoretical expectation =", exp_theoretical, "\n")
