@@ -8,8 +8,8 @@
 binomial_sample <- rbinom(1000, size = 20, prob = 0.4)
 bin_mean <- mean(binomial_sample)
 bin_theoretical <- 20 * 0.4
-cat("Sample mean =", binom_mean, "\n")
-cat("Theoretical expectation =", binom_theoretical, "\n\n")
+cat("Sample mean =", bin_mean, "\n")
+cat("Theoretical expectation =", bin_theoretical, "\n\n")
 
 # 2. Using the function rhyper in R, generate 1000 random deviates from a hypergeometric distribution 
 # with 4 white balls, 8 black balls, and 3 balls drawn without replacement. Compute the sample mean 
