@@ -9,4 +9,4 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-edu_data = pd.read_excel("tabn603.10.xls")
+edu_data = pd.read_csv("tabn603.10.xls")
